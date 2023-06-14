@@ -1,0 +1,236 @@
+---
+title: "Working collaboratively with Git"
+author: "Parisa Gregg"
+format:
+  revealjs: 
+    theme: [default, custom.scss]
+    logo: logo.svg
+    code-link: true
+    css: custom.scss
+    self-contained: true
+    preview-links: true
+---
+
+## Welcome
+
+#### Slides
+
+* [https://github.com/jumpingrivers/2022-pycon-ireland-quarto](https://github.com/jumpingrivers/2022-pycon-ireland-quarto)
+
+# Who am I?
+
+## Jumping Rivers
+
+* __Data science__
+  - Python/ R, machine learning, dashboards, API's
+
+* __Data engineering__
+  - Data pipelines, server health and security, managed RStudio (Posit) services
+
+* __Training__
+  - Python, R, Git + many more
+  
+## Outline
+
+1. Common issues faced
+1. Some solutions
+1. How can Version Control Systems help?
+1. Demo: Intro to GitHub 
+  
+# Common issues
+
+## Tracking versions
+
+Any of these file names look familiar?
+
+```
+code_v1.R
+code_v1b_add_plot.R
+code_v1b_add_plot_FINAL.R
+code_v1b_add_plot_FINAL_FINALv2_sept2020.R
+code_v1b_add_plot_FINAL_FINALv2_sept2020_Maria_edits.R
+```
+
+## Collaborating
+
+* Multiple people making edits to the same file
+* Everyone has their own version 
+* Duplicated work 
+
+
+## Backing up & sharing work
+
+## How to combat these issues?
+
+* Have a system
+
+* Best practices
+  * Keep changes small
+  * Share changes frequently
+  * Back-up everything
+  
+## Manual Versioning
+
+* Standardized naming convention
+
+  * `0.1-ptg-exciting-report.txt`
+  
+  * `0.2-ptg-exciting-report.txt`
+  
+  * `1.0-ptg-exciting-report.txt` (finalised version)
+  
+  * `1.1-ptg-exciting-report.txt` (revision)
+
+## Manual versioning
+
+* Structured folder of copies
+  
+```
+<project-name>
+|   CHANGELOG.txt
+└───current
+│   │   code.R
+|   |   report.txt
+└───2023-06-13
+|   |   code.R
+|   |   report.txt
+└───2023-06-12
+|   |   code.R
+|   |   report.txt
+```
+  
+## Beyond manual versioning
+
+* Versioning manually requires a lot of self-discipline
+
+* Combining versions manually is hard work
+
+* Might need a version control system such as Git 
+
+# Git
+
+## What is Git?
+
+* Widely used Version Control System
+
+* Automatically tracks changes in your project
+
+* Changes by multiple people can be combined into a single file
+
+* Backups stored securely & remotely
+
+
+## What are GitHub and GitLab?
+
+* Think about e-mail... we could host our own e-mail server, but that's usually too much effort
+
+* Git is like e-mail
+
+* GitLab & GitHub are like gmail or yahoo
+
+* There are other git hosting services
+
+* Today we'll focus on GitHub
+
+# Demo: Getting started with GitHub
+
+## Setting up a GitHub account
+
+* It's free!
+* [https://github.com/](https://github.com/)
+
+## Authentication
+
+* GitHub uses personal access tokens (PATs) as a secure method of authentication
+
+* A PAT is an auto-generated *strong* passphrase (not 'monkey123'!)
+
+* The user can set an automatic expiry date and different permissions for each token
+
+* This [guide](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) explains how to set one up in GitHub (make sure to select 'repo' when setting the scopes)
+
+## Creating a Git repository (project)
+
+There are a couple of different ways that we can start using a Git repository:
+
+* Clone an existing repository
+* Create a new repository from scratch
+
+
+## Cloning a GitHub repository
+
+* Downloads a copy of that repository to your machine
+
+* Takes the latest snapshot available (all of the files) from GitHub
+
+* By default saved in a folder with the same name as the repository
+
+## Cloning a GitHub repository
+
+```{r, echo = FALSE, out.width = "90%"}
+knitr::include_graphics("../graphics/cloning-clouds.png")
+```
+
+## Commits
+
+* Usually when working you would save your files
+
+* In Git, instead of just saving, we save and **commit**
+
+* Commit takes a snapshot of all your files
+
+## Staging area
+
+* Not all changes are included in a commit
+
+* **Add** files to the staging area before committing
+
+## Making changes locally
+
+We are going to:
+
+* **Edit & save** some files in our working directory
+
+* **Add** these changes to the staging area
+
+* **Commit** the changes in the staging area to our **local** repository
+
+## Making changes locally 
+
+### Workflow
+
+```{r, echo = FALSE, out.width = "90%"}
+knitr::include_graphics("../graphics/git-workflow-1.png")
+```
+
+## Updating the remote
+
+```{r, echo = FALSE, out.width = "90%"}
+knitr::include_graphics("../graphics/git-workflow-2.png")
+```
+
+## Updating the remote 
+
+Now we are going to:
+
+* Check for changes by any colleagues by **pulling**
+* **Push** our local changes to the remote repository
+
+## So to recap
+
+```{r, echo = FALSE, out.width="80%"}
+knitr::include_graphics("../graphics/git-recap-workflow.png")
+```
+
+## Not just version control!
+
+* Project management
+  * Issues
+  * Labels
+  * Milestones
+
+* Continuous Integration
+
+* Automated deployments 
+
+* Security
