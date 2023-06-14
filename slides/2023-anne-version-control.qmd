@@ -15,77 +15,80 @@ format:
 
 #### Slides
 
-* [https://github.com/jumpingrivers/2022-pycon-ireland-quarto](https://github.com/jumpingrivers/2022-pycon-ireland-quarto)
+-   <https://github.com/jumpingrivers/2023-ANNE-version-control>
 
 # Who am I?
 
 ## Jumping Rivers
 
-* __Data science__
-  - Python/ R, machine learning, dashboards, API's
+-   **Data science**
+    -   Python/ R, machine learning, dashboards, API's
+-   **Data engineering**
+    -   Data pipelines, server health and security, managed RStudio (Posit) services
+-   **Training**
+    -   Python, R, Git + many more
 
-* __Data engineering__
-  - Data pipelines, server health and security, managed RStudio (Posit) services
-
-* __Training__
-  - Python, R, Git + many more
-  
 ## Outline
 
-1. Common issues faced
-1. Some solutions
-1. How can Version Control Systems help?
-1. Demo: Intro to GitHub 
-  
+1.  Common issues faced
+2.  Some solutions
+3.  How can Version Control Systems help?
+4.  Demo: Intro to GitHub
+
 # Common issues
 
 ## Tracking versions
+::: {.incremental}
+- `code_v1.R`
+- `code_v1b_add_plot.R`
+- `code_v1b_add_plot_FINAL.R`
+- `code_v1b_add_plot_FINAL_FINALv2_sept2020.R`
+- `code_v1b_add_plot_FINAL_FINALv2_sept2020_Maria.R`
 
-Any of these file names look familiar?
-
-```
-code_v1.R
-code_v1b_add_plot.R
-code_v1b_add_plot_FINAL.R
-code_v1b_add_plot_FINAL_FINALv2_sept2020.R
-code_v1b_add_plot_FINAL_FINALv2_sept2020_Maria_edits.R
-```
-
+:::
 ## Collaborating
 
-* Multiple people making edits to the same file
-* Everyone has their own version 
-* Duplicated work 
+-   Multiple people making edits to the same file
+-   Everyone has their own version
+-   Duplicated work
+-   Giving/ getting feedback
+-   Sharing work
 
+## Backing up 
 
-## Backing up & sharing work
+```{r, echo = FALSE, out.width = "10%"}
+knitr::include_graphics("../graphics/laptop-fire.jpg")
+```
 
 ## How to combat these issues?
 
-* Have a system
+::: {.incremental}
+- Have a system
+    - Manual rules
+    - External tools
+:::
 
-* Best practices
-  * Keep changes small
-  * Share changes frequently
-  * Back-up everything
-  
 ## Manual Versioning
 
-* Standardized naming convention
+-   Standardized naming convention
 
-  * `0.1-ptg-exciting-report.txt`
-  
-  * `0.2-ptg-exciting-report.txt`
-  
-  * `1.0-ptg-exciting-report.txt` (finalised version)
-  
-  * `1.1-ptg-exciting-report.txt` (revision)
+    -   `0.1-ptg-exciting-report.txt`
+
+    -   `0.2-ptg-exciting-report.txt`
+
+    -   `1.0-ptg-exciting-report.txt` (finalised version)
+
+    -   `1.1-ptg-exciting-report.txt` (revision)
 
 ## Manual versioning
 
-* Structured folder of copies
-  
-```
+
+#### Structured folder of copies
+
+::: columns
+
+::: {.column width="50%"}
+```         
 <project-name>
 |   CHANGELOG.txt
 └───current
@@ -98,72 +101,99 @@ code_v1b_add_plot_FINAL_FINALv2_sept2020_Maria_edits.R
 |   |   code.R
 |   |   report.txt
 ```
+:::
+
+::: {.column width="50%"}
+```
+CHANGELOG.txt
+
+* _2023_06_13
+  * Fix: resolved a minor bug which prevented...
   
+* _2023_06_12
+  * Feature: added a new function which does...
+```
+:::
+
+:::
+
 ## Beyond manual versioning
 
-* Versioning manually requires a lot of self-discipline
+-   Versioning manually requires a lot of self-discipline
 
-* Combining versions manually is hard work
+-   Combining versions manually is hard work
 
-* Might need a version control system such as Git 
+-   Might need a version control system such as Git
 
 # Git
 
 ## What is Git?
 
-* Widely used Version Control System
+::: columns
+::: {.column width="70%"}
+-   Widely used Version Control System
 
-* Automatically tracks changes in your project
+-   Automatically tracks changes in your project
 
-* Changes by multiple people can be combined into a single file
+-   Changes by multiple people can be combined into a single file
 
-* Backups stored securely & remotely
+-   Backups stored securely & remotely
+:::
+::: {.column width="5%"}
+
+:::
+::: {.column width="25%"}
+```{r, echo = FALSE, out.width = "90%"}
+knitr::include_graphics("../graphics/git-xkcd.png")
+```
+
+:::
+:::
 
 
 ## What are GitHub and GitLab?
 
-* Think about e-mail... we could host our own e-mail server, but that's usually too much effort
+-   Think about e-mail... we could host our own e-mail server, but that's usually too much effort
 
-* Git is like e-mail
+-   Git is like e-mail
 
-* GitLab & GitHub are like gmail or yahoo
+-   GitLab & GitHub are like gmail or yahoo
 
-* There are other git hosting services
+-   There are other git hosting services
 
-* Today we'll focus on GitHub
+-   Today we'll focus on GitHub
 
 # Demo: Getting started with GitHub
 
 ## Setting up a GitHub account
 
-* It's free!
-* [https://github.com/](https://github.com/)
+-   It's free!
+-   <https://github.com/>
 
 ## Authentication
 
-* GitHub uses personal access tokens (PATs) as a secure method of authentication
+-   GitHub uses personal access tokens (PATs) as a secure method of authentication
 
-* A PAT is an auto-generated *strong* passphrase (not 'monkey123'!)
+-   A PAT is an auto-generated *strong* passphrase (not 'monkey123'!)
 
-* The user can set an automatic expiry date and different permissions for each token
+-   The user can set an automatic expiry date and different permissions for each token
 
-* This [guide](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) explains how to set one up in GitHub (make sure to select 'repo' when setting the scopes)
+-   This [guide](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) explains how to set one up in GitHub (make sure to select 'repo' when setting the scopes)
 
 ## Creating a Git repository (project)
 
 There are a couple of different ways that we can start using a Git repository:
 
-* Clone an existing repository
-* Create a new repository from scratch
-
+-   Clone an existing repository
+-   Create a new repository from scratch
 
 ## Cloning a GitHub repository
 
-* Downloads a copy of that repository to your machine
+-   Downloads a copy of that repository to your machine
 
-* Takes the latest snapshot available (all of the files) from GitHub
+-   Takes the latest snapshot available (all of the files) from GitHub
 
-* By default saved in a folder with the same name as the repository
+-   By default saved in a folder with the same name as the repository
 
 ## Cloning a GitHub repository
 
@@ -171,37 +201,81 @@ There are a couple of different ways that we can start using a Git repository:
 knitr::include_graphics("../graphics/cloning-clouds.png")
 ```
 
+## Workflow
+
+1. Making changes locally
+2. Updating the remote repository
+
+## Making changes locally
+
+::: columns
+
+::: {.column width="60%"}
+```{r, echo = FALSE, out.width = "100%"}
+knitr::include_graphics("../graphics/working-directory.png")
+```
+:::
+
+:::{.column width="40%"}
+
+- **Edit & save** as you go like usual
+:::
+
+:::
+
+## Making changes locally
+
+::: columns
+
+::: {.column width="60%"}
+```{r, echo = FALSE, out.width = "100%"}
+knitr::include_graphics("../graphics/staging-area.png")
+```
+:::
+
+:::{.column width="40%"}
+
+- **Add** files with related changes
+:::
+
+:::
+
+## Making changes locally
+
+::: columns
+
+::: {.column width="60%"}
+```{r, echo = FALSE, out.width = "100%"}
+knitr::include_graphics("../graphics/local-repository.png")
+```
+:::
+
+:::{.column width="40%"}
+
+- **Commit** your staged changes 
+:::
+
+:::
+
 ## Commits
 
-* Usually when working you would save your files
+-   Commit takes a snapshot of all your files
 
-* In Git, instead of just saving, we save and **commit**
+*"Using a Git commit is like using anchors and other protection when climbing. If you're crossing a dangerous rock face you want to make sure you've used protection to catch you if you fall. Commits play a similar role: if you make a mistake, you can't fall past the previous commit. ---"* 
 
-* Commit takes a snapshot of all your files
+[R Packages, Hadley Wickham.](http://r-pkgs.had.co.nz/git.html#git-commit)
 
-## Staging area
-
-* Not all changes are included in a commit
-
-* **Add** files to the staging area before committing
 
 ## Making changes locally
 
 We are going to:
 
-* **Edit & save** some files in our working directory
+-   **Edit & save** some files in our working directory
 
-* **Add** these changes to the staging area
+-   **Add** these changes to the staging area
 
-* **Commit** the changes in the staging area to our **local** repository
+-   **Commit** the changes in the staging area to our **local** repository
 
-## Making changes locally 
-
-### Workflow
-
-```{r, echo = FALSE, out.width = "90%"}
-knitr::include_graphics("../graphics/git-workflow-1.png")
-```
 
 ## Updating the remote
 
@@ -209,12 +283,12 @@ knitr::include_graphics("../graphics/git-workflow-1.png")
 knitr::include_graphics("../graphics/git-workflow-2.png")
 ```
 
-## Updating the remote 
+## Updating the remote
 
 Now we are going to:
 
-* Check for changes by any colleagues by **pulling**
-* **Push** our local changes to the remote repository
+-   Check for changes by any colleagues by **pulling**
+-   **Push** our local changes to the remote repository
 
 ## So to recap
 
@@ -222,15 +296,37 @@ Now we are going to:
 knitr::include_graphics("../graphics/git-recap-workflow.png")
 ```
 
+
+## So, about merging...
+
+* Sometimes it's not as simple as we just said
+
+* Git can often automatically pull and merge changes
+
+* If it can't you get a **merge conflict**
+    * Often occurs when two people have edited the same line of a file
+    * Git then doesn't know which commit takes precedence
+
+* If a merge conflict occurs, we have to manually fix it.
+
 ## Not just version control!
 
-* Project management
-  * Issues
-  * Labels
-  * Milestones
+-   Project management
 
-* Continuous Integration
+    -   Issues
+    -   Labels
+    -   Milestones
 
-* Automated deployments 
+-   Continuous Integration
 
-* Security
+-   Automated deployments
+
+-   Security
+
+## Branching
+
+* Here we pushed changes to the remote **main branch**
+
+* main should always have working code
+
+* In reality we would make commits to a separate branch & then create a **pull request**
