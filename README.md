@@ -1,2 +1,2 @@
-# 2023-ANNE-version-control
-Technical masterclass at Analysts Network North East Spring Conference
+# Working collaboratively with Git
+Technical masterclass at Analysts Network North East Spring Conference 2023
